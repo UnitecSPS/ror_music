@@ -1,4 +1,20 @@
 RorMusic::Application.routes.draw do
+
+  resources :users
+
+  root to: "home#index"
+
+  match "/songlist" => "home#songlist", as: :song_list
+  match "/singerlist" => "home#singerlist", as: :singer_list
+
+  resources :singers do
+    get 'catalogue', on: :member
+  end
+
+  resources :albums do
+    resources :songs, except: [:index, :show]
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

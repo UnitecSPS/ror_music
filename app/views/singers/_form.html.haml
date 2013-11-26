@@ -1,0 +1,15 @@
+= form_for @singer do |f|
+  .form_settings
+    %p
+      = f.label :name
+      = f.text_field :name
+    %p
+      = f.label :country
+      = f.select :country, Country.all
+    %p
+      = f.label :twitter
+      = f.text_field :twitter
+    %p
+      = f.submit "Save", class: "submit"
+      = link_to "Cancel", singers_path
+

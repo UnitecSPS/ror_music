@@ -1,0 +1,11 @@
+%h1= @singer.name
+%p
+  %strong Country:
+  = @singer.country
+%p
+  %strong Twitter:
+  = @singer.twitter
+%p
+  = link_to "Catalogue", catalogue_singer_path(@singer)
+%p
+  = link_to "Edit", edit_singer_path(@singer)

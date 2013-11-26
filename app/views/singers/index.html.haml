@@ -1,0 +1,11 @@
+%h1 List of Singers
+%table
+  %tr
+    %th Singer Name
+    %th Albums
+  - @singers.each do |singer|
+    %tr
+      %td= link_to singer.name, singer
+      %td= singer.albums.count
+%p
+  = link_to "New Singer", new_singer_path

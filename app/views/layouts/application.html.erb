@@ -5,10 +5,32 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine&amp;v1" />
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" />
 </head>
 <body>
-
-<%= yield %>
-
+  <div id="wrapper">
+    <h1><em>RoR</em>MUSIC!</h1>
+    <div id="nav">
+      <ul>
+        <li><%= link_to "<span>01</span>HOME".html_safe, root_path %></li>
+        <li><%= link_to "<span>02</span>SINGERS".html_safe, singers_path %></li>
+        <li><%= link_to "<span>03</span>ALBUMS".html_safe, albums_path %></li>
+        <li><%= link_to "<span>04</span>SIGN UP".html_safe, new_user_path %></li>
+      </ul>
+    </div>
+    <div id="topcon">
+      <div id="topcon-inner">
+        <h2>Welcome to RoR Music Administration</h2>
+        <p>In here you can edit or create new singers and albums.</p>
+        <p>Every Album can add songs.</p>
+      </div>
+    </div>
+    <div id="content">
+      <div id="body">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

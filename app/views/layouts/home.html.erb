@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RorMusic</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="wrapper">
+    <h1><em>RoR</em>MUSIC!</h1>
+    <div id="nav">
+      <ul>
+        <li><%= link_to "<span>01</span>HOME".html_safe, root_path %></li>
+        <li><%= link_to "<span>02</span>SONGS".html_safe, song_list_path %></li>
+        <li><%= link_to "<span>03</span>SINGERS".html_safe, singer_list_path %></li>
+        <li><%= link_to "<span>04</span>ADMINISTRATION".html_safe, singers_path %></li>
+      </ul>
+    </div>
+    <div id="topcon">
+      <div id="topcon-inner">
+        <h2>Welcome to RoR Music</h2>
+        <p>It's an awesome new web page designed for all the music lovers on the world.</p>
+        <p>Feel free on finding new music that like.</p>
+      </div>
+    </div>
+    <div id="content">
+      <div id="body">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
