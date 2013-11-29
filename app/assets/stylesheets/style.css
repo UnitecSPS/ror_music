@@ -283,3 +283,9 @@ table tr td
 { background: #35BDF5;
   color: #111;
   border-top: 1px solid #FFF;}
+
+.error
+{ clear: both;
+  background: #828179;
+  border: 1px;
+}

@@ -2,6 +2,10 @@ RorMusic::Application.routes.draw do
 
   resources :users
 
+  match "/login" => "sessions#new", as: :home_login, via: :get
+  match "/login" => "sessions#create", via: :post
+  match "/logout" => "sessions#destroy", as: :logout, via: :delete
+
   root to: "home#index"
 
   match "/songlist" => "home#songlist", as: :song_list

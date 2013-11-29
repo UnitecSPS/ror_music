@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
   def new
-    @user = User.new
+    if current_user.email == "cgotcha@gmail.com"
+      @user = User.new
+    else
+      redirect_to singers_path
+    end
   end
 
   def create

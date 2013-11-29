@@ -1,0 +1,16 @@
+%h1 Please Log In
+
+- if flash[:notice]
+  .error
+    %p= flash[:notice]
+
+= form_tag login_path do
+  .form_settings
+    %p
+      = label_tag :email
+      = email_field_tag :email, cookies.signed[:email]
+    %p
+      = label_tag :password
+      = password_field_tag :password
+    %p
+      = submit_tag "Log In", class: "submit"
